@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gokul K - Software Engineer Portfolio</title>
+    <meta
+      name="description"
+      content="Software Engineer specializing in web development, database management, and problem-solving. Building efficient solutions with modern technologies."
+    />
+    <meta name="author" content="Gokul K" />
+    <meta
+      name="keywords"
+      content="software engineer, portfolio, web development, PHP, Laravel, MySQL, programming"
+    />
+
+    <meta property="og:title" content="Gokul K - Software Engineer Portfolio" />
+    <meta
+      property="og:description"
+      content="Software Engineer specializing in web development, database management, and problem-solving. Building efficient solutions with modern technologies."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+    <script type="module" crossorigin src="/assets/index-dfcfc8wd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-bjspzffx.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
+    if (!form) return; // form not loaded yet
+
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbzfoyk94kCopNRLE0FgBBQLTioJRabY5FA64ZMHmNgRbkNJD51sjSkc0vBmq8TUSowu/exec";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("name")?.value || "",
+        email: document.getElementById("email")?.value || "",
+        subject: document.getElementById("subject")?.value || "",
+        message: document.getElementById("message")?.value || "",
+        resume: document.getElementById("resume")?.value || ""
+      };
+
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        alert(result.message || "Submitted successfully!");
+      } catch (err) {
+        alert("Submission failed — check console");
+        console.error(err);
+      }
+    });
+  });
+</script>
+  </body>
+</html>
